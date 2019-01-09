@@ -36,3 +36,7 @@ footer {
 #trainHeader {
     text-align:center;
 }
+
+#submitButton {
+float:Right;
+}
