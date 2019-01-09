@@ -14,6 +14,7 @@ var name= "";
 var dest="";
 var frequency="";
 
+
 // grabbing information when clicked submit
 $("#submitButton").on("click", function () {
   var name = $("#nameInput").val().trim();
@@ -52,19 +53,22 @@ database.ref().on("child_added", function(childSnapshot) {
   var Ttime = childSnapshot.val().trainTime;
   var Tfrequency = childSnapshot.val().frequency;
 console.log(Ttime)
+var timeConverted = moment(Ttime, "HH:mm").subtract(1, "years");
+console.log(timeConverted);
+
 
   // console.log(Tname);
   // console.log(Tdest);
   // console.log(Ttime);
   // console.log(Tfrequency);
 
-  // compute the difference in time from 'now' and the first train using UNIX timestamp, store in var and convert to minutes
-  var TtrainTime = moment().diff(moment.unix(Ttime, "X"), "minutes");
+  
+  var TtrainTime = moment().diff(moment(timeConverted), "minutes");
   console.log(TtrainTime)
-   // get the remainder of time by using 'moderator' with the frequency & time difference, store in var
+
   Tremainder = TtrainTime % Tfrequency;
   console.log(Tremainder);
-  // subtract the remainder from the frequency, store in var
+  
   var minAway = Tfrequency - Tremainder;
 
   var nextArrival = moment().add(minAway, "m").format("hh:mm A");
