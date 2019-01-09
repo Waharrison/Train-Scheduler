@@ -1,0 +1,38 @@
+.jumbotron {
+    background-color: rgb(80, 80, 82);
+    color: white;
+    text-align: center;
+    
+}
+
+#train-card {
+    font-size: 16px;
+}
+
+.card-header {
+    background-color:rgb(80, 80, 82);
+    color:White;
+    height: 50px;
+    font-display: bold;
+}
+
+#currentTrain {
+    font:white;
+    font-size: 18px;
+    font: bold;
+}
+
+
+body{
+background: url(../images/background.jpg);
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+footer {
+    text-align: center;
+    color:white;
+}
+
+#trainHeader {
+    text-align:center;
+}
